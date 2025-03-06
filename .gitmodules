@@ -1,0 +1,3 @@
+[submodule "lfads_tf2"]
+	path = lfads_tf2
+	url = git@github.com:snel-repo/lfads_tf2.git
