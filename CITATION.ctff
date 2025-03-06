@@ -1,0 +1,92 @@
+cff-version: 1.2.0
+title: >-
+  Stabilizing brain-computer interfaces through alignment of latent dynamics
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Brianna M
+    family-names: Karpowicz
+    email: bkarpo2@emory.edu
+    affiliation: Georgia Tech & Emory University
+    orcid: https://orcid.org/0000-0001-6519-4641 
+  - given-names: Yahia H
+    family-names: Ali
+    affiliation: Georgia Tech & Emory University
+    orcid: https://orcid.org/0000-0001-8618-3837
+  - given-names: Lahiru N
+    family-names: Wimalasena
+    affiliation: Georgia Tech & Emory University
+    orcid: https://orcid.org/0000-0002-8611-0192
+  - given-names: Andrew R
+    family-names: Sedler
+    email: arsedle@emory.edu
+    affiliation: Georgia Tech & Emory University
+    orcid: 'https://orcid.org/0000-0001-9480-0698'
+  - given-names: Mohammad Reza
+    family-names: Keshtkaran
+    affiliation: Georgia Tech & Emory University
+  - given-names: Kevin
+    family-names: Bodkin
+    affiliation: Northwestern University
+  - given-names: Xuan
+    family-names: Ma
+    affiliation: Northwestern University
+    orcid: https://orcid.org/0000-0003-3352-1905
+  - given-names: Daniel B.
+    family-names: Rubin
+    affiliation: Massachusetts General Hospital & Harvard Medical School
+    orcid: https://orcid.org/0000-0001-6982-9587
+  - given-names: Ziv M.
+    family-names: Williams
+    affiliation: Massachusetts General Hospital & Harvard Medical School
+  - given-names: Sydney S.
+    family-names: Cash
+    affiliation: Massachusetts General Hospital & Harvard Medical School
+    orcid: https://orcid.org/0000-0002-4557-6391
+  - given-names: Leigh R.
+    family-names: Hochberg
+    affiliation: Massachusetts General Hospital, Harvard Medical School, & Brown University
+    orcid: https://orcid.org/0000-0003-0261-2273
+  - given-names: Lee E.
+    family-names: Miller
+    affiliation: Northwestern University
+    orcid: https://orcid.org/0000-0001-8675-7140
+  - given-names: Chethan
+    family-names: Pandarinath
+    email: cpandar@emory.edu
+    affiliation: Georgia Tech & Emory University
+    orcid: 'https://orcid.org/0000-0003-1241-1432'
+identifiers:
+  - type: other
+    value: 'https://www.biorxiv.org/content/10.1101/2022.04.06.487388v2'
+    description: biorXiv preprint
+repository-code: 'https://github.com/snel-repo/nomad'
+abstract: >-
+  Intracortical brain-computer interfaces (iBCIs) restore motor function to 
+  people with paralysis by translating brain activity into control signals 
+  for external devices. In current iBCIs, instabilities at the neural interface 
+  result in a degradation of decoding performance, which necessitates frequent 
+  supervised recalibration using new labeled data. One potential solution is to 
+  use the latent manifold structure that underlies neural population activity 
+  to facilitate a stable mapping between brain activity and behavior. Recent 
+  efforts using unsupervised approaches have improved iBCI stability using this 
+  principle; however, existing methods treat each time step as an independent 
+  sample and do not account for latent dynamics. Dynamics have been used to 
+  enable high performance prediction of movement intention, and may also help 
+  improve stabilization. Here, we present a platform for Nonlinear Manifold 
+  Alignment with Dynamics (NoMAD), which stabilizes iBCI decoding using 
+  recurrent neural network models of dynamics. NoMAD uses unsupervised 
+  distribution alignment to update the mapping of nonstationary neural data to 
+  a consistent set of neural dynamics, thereby providing stable input to the 
+  iBCI decoder. In applications to data from monkey motor cortex collected 
+  during motor tasks, NoMAD enables accurate behavioral decoding with 
+  unparalleled stability over weeks-to months-long timescales without any 
+  supervised recalibration.
+keywords:
+  - deep learning
+  - neuroscience
+  - dynamical systems
+  - brain-computer interfaces
+license: Apache-2.0
