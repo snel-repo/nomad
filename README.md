@@ -18,4 +18,4 @@ pip install -e .
 ```
 
 ## Usage
-Example usage of the NoMAD codebase along with sample data files are described in `demos/demos.ipynb`.
+Example usage of the NoMAD codebase along with sample data files are described in `demo/demo.ipynb`.
