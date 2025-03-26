@@ -1,0 +1,47 @@
+MODEL: 
+  DATA_DIM: 100
+  SEQ_LEN: 30
+  TYPE: FFN-KL 
+  HIDDEN_DIM: 50
+  DAY0_MODEL_TYPE: 'behavior'
+  ALIGN_DATA:  # options: {gen_states, factors, rates}
+    - gen_states
+  DAYK_LFADS_TRAINABLES: # options: any LFADS layers
+    - lowd_readin
+    - generator
+    - rate_linear
+    - decoder.rnn.cell.fac_linear
+  SAMPLE_POSTERIORS: True
+  INIT_READIN_FROM_DAY0: True
+TRAIN:
+  EARLY_STOPPING_COST: 'NLL-KL'
+  ALIGN_LOSS_WEIGHT: # one per align_data
+    - 1.0
+  DATA: 
+    DAY0: ''
+    DAYK: ''
+  PATIENCE: 10
+  BATCH_SIZE: 300
+  MAX_EPOCHS: 10000
+  MAX_GRAD_NORM: 2000.0
+  LFADS_LOSS_WEIGHT: 1.0 
+  NLL:
+    INCREASE_EPOCH: 100
+    WEIGHT: 10.
+  LR:
+    INIT: 4.e-4
+    STOP: 1.0e-9
+    DECAY: 0.95
+    PATIENCE: 6
+  KL: 
+    START_EPOCH: 0
+    INCREASE_EPOCH: 10
+    IC_WEIGHT: 1.e-4
+    CO_WEIGHT: 1.e-4
+  L2:
+    READIN_SCALE: 5.e-3
+  LOSS_SCALE: 1.0e+4
+  USE_TB: False
+  MODEL_DIR: day0_model/
+  ALIGN_DIR: align_model/
+  OVERWRITE: True

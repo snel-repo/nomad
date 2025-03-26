@@ -1,0 +1,46 @@
+MODEL:
+  DATA_DIM: 100
+  SEQ_LEN: 30
+  ENC_INPUT_DIM: 50
+  IC_ENC_DIM: 100
+  CI_ENC_DIM: 100
+  CON_DIM: 100
+  CO_DIM: 4
+  IC_DIM: 100
+  GEN_DIM: 100
+  FAC_DIM: 30
+  DROPOUT_RATE: 0.05 
+  CD_RATE: 0.3
+  BEHAVIOR_DIM: 4 #force, dfdt
+TRAIN:
+  DATA:
+    DIR: 'chopped_data/day0/'
+    PREFIX: lfads
+    AUGMENT:
+      JITTER_WIDTH: 2
+  PATIENCE: 10
+  BATCH_SIZE: 1000
+  ADAM_EPSILON: 1.0e-8
+  LR: 
+    INIT: 1.0e-3 
+    STOP: 1.0e-6
+    DECAY: 0.95
+    DECODER: 1.0e-3
+  L2:
+    INCREASE_EPOCH: 100
+    GEN_SCALE: 1.0e-6 
+    CON_SCALE: 1.0e-6 
+  KL:
+    INCREASE_EPOCH: 100
+    IC_WEIGHT: 1.0e-4 
+    CO_WEIGHT:  1.0e-4 
+  DECODE:
+    FROM: 'gen_states'
+    SCALE: 0.1
+    INCREASE_EPOCH: 100
+    N_DELAY_BINS: 0 
+  TUNE_MODE: False
+  OVERWRITE: True
+  PBT_MODE: False
+  USE_TB: False
+  MODEL_DIR: day0_model/

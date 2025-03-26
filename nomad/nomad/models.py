@@ -366,11 +366,6 @@ class AlignLFADS(Model):
             f.close()
 
             self.lfads_dayk.load_matrix_to_lowd_readin(mat, bias=bias, freeze=True, norm_layer=True)
-
-        if self.cfg.MODEL.DAY0_MODEL_TYPE == 'behavior' and self.lfads_day0.cfg.MODEL.FFN: 
-            print('Initializing Day K generator using Day 0 FFN weights...')
-            for ii, w in enumerate(self.lfads_day0.ffn.weights):
-                self.lfads_dayk.generator.weights[ii].assign(w)
             
     def get_align_tensors(self, d0_data):
         """Returns the tensors that we are aligning, based on the configuration.
