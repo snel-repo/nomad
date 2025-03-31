@@ -29,10 +29,10 @@ from lfads_tf2.subclasses.behavior.defaults import get_cfg_defaults as get_behav
 from lfads_tf2.initializers import variance_scaling
 from lfads_tf2.regularizers import DynamicL2
 
-from align_tf2.utils import rgetattr
-from align_tf2.tuples import SingleModelOutput, AlignmentOutput
-from align_tf2.layers import MinibatchDiscrimination
-from align_tf2.defaults import get_cfg_defaults as get_align_defaults
+from nomad.utils import rgetattr
+from nomad.tuples import SingleModelOutput, AlignmentOutput
+from nomad.layers import MinibatchDiscrimination
+from nomad.defaults import get_cfg_defaults as get_align_defaults
 
 class AlignLFADS(Model):
     def __init__(self, cfg_node=None, cfg_path=None, align_dir=None, lve=True):
