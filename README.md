@@ -6,10 +6,10 @@ If you use NoMAD in published work, please cite our manuscript:
 To create an environment and install the dependencies of the project, run the following commands:
 
 ```
-conda create -n nomad python=3.7.7
+conda create -n nomad python=3.7.7 -y
 conda activate nomad 
-conda install -c nvidia cudatoolkit=10.0 
-conda install -c nvidia cudnn=7.6
+conda install -c nvidia cudatoolkit=10.0 -y
+conda install -c nvidia cudnn=7.6 -y
 cd lfads_tf2
 pip install -e .
 cd ..
